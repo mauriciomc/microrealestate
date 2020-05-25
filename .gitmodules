@@ -1,15 +1,15 @@
 [submodule "loca"]
 	path = loca
-	url = https://github.com/camelaissani/loca.git
+	url = https://github.com/mauriciomc/loca
 [submodule "authenticator"]
 	path = authenticator
-	url = https://github.com/microrealestate/authenticator.git
+	url = https://github.com/mauriciomc/authenticator
 [submodule "emailer"]
 	path = emailer
-	url = https://github.com/microrealestate/emailer.git
+	url = https://github.com/mauriciomc/emailer
 [submodule "pdfgenerator"]
 	path = pdfgenerator
-	url = https://github.com/microrealestate/pdfgenerator.git
+	url = https://github.com/mauriciomc/pdfgenerator
 [submodule "frontend"]
 	path = frontend
-	url = https://github.com/microrealestate/frontend.git
+	url = https://github.com/mauriciomc/frontend
