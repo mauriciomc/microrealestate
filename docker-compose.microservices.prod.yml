@@ -104,18 +104,20 @@ services:
         syslog-address: 'udp://localhost:$LOGSTASH_UDP_PORT'
         tag: '{{.Name}}/{{.ID}}'
     depends_on:
+      - mongo
+      - emailer
       - kibana
 ###############################################################################
 # Frontend
 ###############################################################################
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    logging:
-      driver: syslog
-      options:
-        syslog-address: 'udp://localhost:$LOGSTASH_UDP_PORT'
-        tag: '{{.Name}}/{{.ID}}'
-    depends_on:
-      - kibana
+#  frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile
+#    logging:
+#      driver: syslog
+#      options:
+#        syslog-address: 'udp://localhost:$LOGSTASH_UDP_PORT'
+#        tag: '{{.Name}}/{{.ID}}'
+#    depends_on:
+#      - kibana

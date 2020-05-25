@@ -75,15 +75,27 @@ display_help() {
     echo "Usage: $0 [option...] {dev|build|status|start|stop|restart|config-dev|config-prod}" >&2
 }
 
+bkup_db() {
+    echo "Downloading Database"
+    docker-compose $prod_compose_files_argument run mongo_db_backup > dump/db_bkup_$(date '+%d-%m-%Y_%H-%M-%S').bson
+}
+
 case "$1" in
+    bkup-db)
+	initEnv prod.env
+	initEnv .env
+	bkup_db
+	;;
     config-dev)
         initEnv dev.env
         initEnv .env
-        configDev;;
+        configDev
+	;;
     config-prod)
         initEnv prod.env
         initEnv .env
-        configProd;;
+        configProd
+	;;
     dev)
         initEnv dev.env
         initEnv .env

@@ -26,6 +26,20 @@ services:
       - './data/mongodb:/data/db'
     networks:
       - net
+  
+  mongo_db_backup:
+    image: mongo:3.6
+    expose:
+      - '$MONGO_PORT'
+    volumes:
+      - './data/mongodb:/data/db'
+    command:
+      - 'bash'
+      - '-c'
+      - 'mongodump --host mongo --archive --db $DB_NAME > /dev/stdout 2> /dev/null'
+    networks:
+      - net
+
 ###############################################################################
 # NGINX
 ###############################################################################
@@ -48,7 +62,7 @@ services:
       - net
     depends_on:
       - loca
-      - frontend
+#      - frontend
 ###############################################################################
 # RabbitMQ
 ###############################################################################
@@ -160,21 +174,21 @@ services:
 ###############################################################################
 # Frontend
 ###############################################################################
-  frontend:
-    image: mre/frontend:latest
-    environment:
-      - NODE_ENV
-      - PORT=$FRONTEND_PORT
-      - LOGGER_LEVEL=$LOGGER_LEVEL
-      - APP_NAME=$APP_NAME
-      - API_URL=$API_URL
-    expose:
-      - '$FRONTEND_PORT'
-    networks:
-      - net
-    depends_on:
-      - loca
-      - authenticator
+#  frontend:
+#    image: mre/frontend:latest
+#    environment:
+#      - NODE_ENV
+#      - PORT=$FRONTEND_PORT
+#      - LOGGER_LEVEL=$LOGGER_LEVEL
+#      - APP_NAME=$APP_NAME
+#      - API_URL=$API_URL
+#    expose:
+#      - '$FRONTEND_PORT'
+#    networks:
+#      - net
+#    depends_on:
+#      - loca
+#      - authenticator
   ###############################################################################
 # microservices network
 ###############################################################################
