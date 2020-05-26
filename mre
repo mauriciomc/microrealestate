@@ -72,7 +72,7 @@ stop() {
 }
 
 display_help() {
-    echo "Usage: $0 [option...] {dev|build|status|start|stop|restart|config-dev|config-prod}" >&2
+    echo "Usage: $0 [option...] {dev|build|status|start|stop|restart|config-dev|config-prod|bkup-db}" >&2
 }
 
 bkup_db() {
