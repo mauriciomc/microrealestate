@@ -7,11 +7,16 @@
       "github": "mauriciomc",
       "email": "mauricio.m.c@gmail.com",
       "name": "Mauricio De Carvalho",
-      "comment": "Engineer"
-      "github": "nfdc",
+      "comment": "Engineer"},
+      
+      {"github": "nfdc",
       "email": "felipevip@gmail.com",
       "name": "Felipe De Carvalho",
-      "comment": "Jack of All Trades"
+      "comment": "Jack of All Trades"},
+      {"github": "Cleci",
+      "email": "mcleci@gmail.com",
+      "name": "Maria Martins",
+      "comment": "lawyer"
     }
   ]
 }
