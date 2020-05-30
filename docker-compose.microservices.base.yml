@@ -174,21 +174,21 @@ services:
 ###############################################################################
 # Frontend
 ###############################################################################
-#  frontend:
-#    image: mre/frontend:latest
-#    environment:
-#      - NODE_ENV
-#      - PORT=$FRONTEND_PORT
-#      - LOGGER_LEVEL=$LOGGER_LEVEL
-#      - APP_NAME=$APP_NAME
-#      - API_URL=$API_URL
-#    expose:
-#      - '$FRONTEND_PORT'
-#    networks:
-#      - net
-#    depends_on:
-#      - loca
-#      - authenticator
+  frontend:
+    image: mre/frontend:latest
+    environment:
+      - NODE_ENV
+      - PORT=$FRONTEND_PORT
+      - LOGGER_LEVEL=$LOGGER_LEVEL
+      - APP_NAME=$APP_NAME
+      - API_URL=$API_URL
+    expose:
+      - '$FRONTEND_PORT'
+    networks:
+      - net
+    depends_on:
+      - loca
+      - authenticator
   ###############################################################################
 # microservices network
 ###############################################################################
